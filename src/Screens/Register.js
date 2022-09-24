@@ -1,8 +1,8 @@
-export default function Login() {
+export default function Register() {
     return(
         <div className="row justify-content-center pt-5">
             <div className="col-sm-6">
-                <h1>Login</h1>
+                <h1>Register</h1>
                 <div className="card p-4">
                     <form action="/action_page.php">
                         <div className="form-group">
@@ -20,5 +20,6 @@ export default function Login() {
                 </div>
             </div> 
         </div>
+        
     )
 }
