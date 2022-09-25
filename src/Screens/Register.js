@@ -25,13 +25,13 @@ export default function Register() {
                 <div className="card p-4">
                     <form action="/action_page.php">
                     <div className="form-group">
-                            <label for="name">Name:</label>
+                            <label htmlFor="name">Name:</label>
                             <input type="name" className="form-control" placeholder="Enter name" 
                                 onChange={e=>setName(e.target.value)}
                             id="name"/>
                         </div>
                         <div className="form-group">
-                            <label for="email">Email address:</label>
+                            <label htmlFor="email">Email address:</label>
                             <input type="email" className="form-control" placeholder="Enter email" 
                                 onChange={e=>setEmail(e.target.value)}
                             id="email"/>
