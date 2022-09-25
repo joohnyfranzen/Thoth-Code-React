@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
+import { store } from "..";
 import Axios from "../components/Axios"
 
 export default function Register() {
@@ -8,10 +9,12 @@ export default function Register() {
     const [password, setPassword] = useState();
     const [name, setName] = useState();
 
+    const [aaaa, dispatch] = useReducer(store);
     const submitForm = () => {
 
         http.post('/user', {name:name, email:email, password:password}).then((res)=>{
-            console.log(res.data)
+            dispatch({type: 'SET_TOKEN', value:res.data.token})
+            console.log(aaaa);
         })
     }
 
