@@ -1,17 +1,23 @@
-import { useState } from "react";
+import { useRef } from "react";
+import { useReducer, useState } from "react";
+import { store } from "..";
 import Axios from "../components/Axios";
+
 
 export default function Login() {
 
+
     const {http} = Axios();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const {value} = store.getState().Auth;
 
-    console.log(email, password)
+    const email = useRef(null)
+    const password = useRef(null)
+
     const submitForm = () => {
-
-        http.post('/login', {email:email, password:password}).then((res)=>{
-            console.log(res.data)
+        
+        http.post('/login', {email:email.current.value, password:password.current.value}).then((res)=>{
+            http.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`
+            store.dispatch({type: 'SET_TOKEN', value: res.data.token})
         })
     }
     return(
@@ -21,15 +27,15 @@ export default function Login() {
                 <div className="card p-4">
                     <form action="/action_page.php">
                         <div className="form-group">
-                            <label for="email">Email address:</label>
+                            <label htmlFor="email">Email address:</label>
                             <input type="email" className="form-control" placeholder="Enter email" 
-                                onClick={e=>setEmail(e.target.value)}
+                                ref={email}
                             id="email"/>
                         </div>
                         <div className="form-group">
-                            <label for="pwd">Password:</label>
+                            <label htmlFor="pwd">Password:</label>
                             <input type="password" className="form-control" placeholder="Enter password" 
-                                onClick={e=>setPassword(e.target.value)}
+                                ref={password}
                             id="pwd"/>
                         </div>
                         <div className="form-group form-check">
