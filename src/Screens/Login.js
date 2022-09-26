@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { useReducer, useState } from "react";
 import { store } from "..";
 import Axios from "../components/Axios";
 
@@ -8,7 +7,6 @@ export default function Login() {
 
 
     const {http} = Axios();
-    const {value} = store.getState().Auth;
 
     const email = useRef(null)
     const password = useRef(null)
@@ -16,7 +14,6 @@ export default function Login() {
     const submitForm = () => {
         
         http.post('/login', {email:email.current.value, password:password.current.value}).then((res)=>{
-            http.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`
             store.dispatch({type: 'SET_TOKEN', value: res.data.token})
         })
     }
