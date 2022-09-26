@@ -1,20 +1,22 @@
-import { useReducer, useState } from "react";
+import {  useState } from "react";
+import {  useNavigate } from "react-router-dom";
 import { store } from "..";
 import Axios from "../components/Axios"
 
 export default function Register() {
 
+    const navigate = useNavigate();
     const {http} = Axios();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [name, setName] = useState();
-
-    const [aaaa, dispatch] = useReducer(store);
+    
+    
     const submitForm = () => {
 
         http.post('/user', {name:name, email:email, password:password}).then((res)=>{
-            dispatch({type: 'SET_TOKEN', value:res.data.token})
-            console.log(aaaa);
+            store.dispatch({type: 'SET_TOKEN', value:res.data.token})
+            navigate('/')
         })
     }
 
