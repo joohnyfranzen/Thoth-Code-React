@@ -41,9 +41,9 @@ export default function NewPost() {
                                 ref={slug}
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group" >
                             <label>Content:</label>
-                            <input className="form-control" placeholder="Content" 
+                            <textarea className="form-control" size="300" placeholder="Content" 
                                 ref={content}
                             />
                         </div>
