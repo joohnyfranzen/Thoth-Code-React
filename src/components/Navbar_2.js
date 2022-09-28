@@ -15,6 +15,9 @@ export default function Navbar() {
                 <Link className="nav-link" to="/logout">Logout</Link>
             </li>
             <li className="nav-item">
+                <Link className="nav-link" to="/myposts">My posts</Link>
+            </li>
+            <li className="nav-item">
                 <Link className="nav-link" to="/newpost">Newpost</Link>
             </li>
             </ul>
