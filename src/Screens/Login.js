@@ -1,11 +1,12 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { store } from "..";
 import Axios from "../components/Axios";
 
-
 export default function Login() {
-
-
+    
+    
+    const navigate = useNavigate()
     const {http} = Axios();
 
     const email = useRef(null)
@@ -15,7 +16,9 @@ export default function Login() {
         
         http.post('/login', {email:email.current.value, password:password.current.value}).then((res)=>{
             store.dispatch({type: 'SET_TOKEN', value: res.data.token})
+            navigate('/')
         })
+        
     }
     return(
         <div className="row justify-content-center pt-5">
