@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Logged from "./routes/Logged.routes";
 import Unlogged from "./routes/Unlogged.routes";
@@ -9,6 +9,8 @@ function App() {
 
   const { value } = useSelector((state) => state.Auth);
 
+  useEffect(() => {
+  }, [value])
   return (
     <div className="App">
       
