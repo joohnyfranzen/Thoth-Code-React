@@ -1,3 +1,11 @@
-#post-id{
-    margin-top: 200px;
+.post-comment{
+    display: inline-block;
+    width: 63%;
+}
+.comment{
+    border: 1px solid rgba(192, 192, 192, 0.5);
+    align-items: center;
+}
+.comment h2{
+    display: block;
 }

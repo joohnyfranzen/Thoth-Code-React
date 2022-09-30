@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { store } from "..";
-import Axios from "../components/Axios";
+import { store } from "../..";
+import Axios from "../../Utils/Axios";
 
 export default function Login() {
     
@@ -16,6 +16,7 @@ export default function Login() {
         
         http.post('/login', {email:email.current.value, password:password.current.value}).then((res)=>{
             store.dispatch({type: 'SET_TOKEN', value: res.data.token})
+            localStorage.setItem('token', res.data.token)
             navigate('/')
         })
         

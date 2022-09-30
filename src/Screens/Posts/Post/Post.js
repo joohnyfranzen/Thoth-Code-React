@@ -1,17 +1,40 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Axios from "../../../components/Axios";
+import Axios from "../../../Utils/Axios";
+import './Post.css'
 
 
 export default function Post() {
+    
     const { id } = useParams();
 
-    const [post, setPost] = useState({});
+    const [post, setPost] = useState([]);
+    const [comments, setComments] = useState([]);
+    const [comment, setComment] = useState(false);
+
+    const commentary = useRef();
 
     const {http} = Axios();
-    http.get(`/post/${id}`).then((response) => {
-        setPost(response.data);
-    });
+    
+    function getPost() {
+        http.get(`/post/${id}`).then((response) => {
+            setPost(response.data);
+        });
+    }   
+    function getComments() {
+        http.get(`/postcomment/${id}`).then((response) => {
+            setComments(response.data);
+        });
+    }
+    
+    useEffect(() => {
+        getPost();
+        getComments();
+    }, []);
+    const commentPost = () => {
+        http.post(`/postcomment/${id}`, {comment:commentary.current.value, post_id:id})
+    }
+
     return(
 
         <div>
@@ -22,9 +45,32 @@ export default function Post() {
                     <p>{post.user_id}</p>
                     <h3 className="slug">{post.slug}</h3>
                     <Link className="nav-button" to={`/post/${post.id}`}>Like</Link>
-                    <Link className="nav-button" to={`/post/${post.id}`}>Visit</Link>
-                    <Link className="nav-button" to={`/post/${post.id}`}>Comment</Link>
+                    <button className="nav-button" onClick={() => {setComment(!comment)}}>Comment</button>
                 </div> 
+            </div>
+            <div className="post-comment">
+                {comment ? ( 
+                    
+                    <div className="newComment">
+                            <input ref={commentary} type="text">
+                            </input>
+                            <button type="submit" onClick={() => commentPost()}>Comentar</button>
+                        </div>
+                    ) : (<> </>)
+                }
+                
+                {comments.map((comment) => {
+                    return (
+                        <div className="comment">
+                            <h2>
+                                {comment.user_comment.name}
+                            </h2>
+                            <p>
+                                Comment= {comment.comment}
+                            </p>
+                        </div>
+                    );
+                })}
             </div>
         </div>
         

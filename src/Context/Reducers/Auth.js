@@ -1,4 +1,4 @@
-export default (state = { value: '' }, action ) => {
+export default (state = { value: localStorage.getItem('token') }, action ) => {
 
     switch (action.type) {
         case 'SET_TOKEN':

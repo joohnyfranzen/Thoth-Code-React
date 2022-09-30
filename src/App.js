@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import React, { useEffect } from 'react';
 import './App.css';
-import Logged from "./routes/Logged.routes";
-import Unlogged from "./routes/Unlogged.routes";
+import Logged from "./Routes/Logged.routes";
+import Unlogged from "./Routes/Unlogged.routes";
 import { useSelector } from 'react-redux';
 
 function App() {

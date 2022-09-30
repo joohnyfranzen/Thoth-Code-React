@@ -1,7 +1,7 @@
 import { React, useEffect, useRef, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { store } from "../../..";
-import Axios from "../../../components/Axios";
+import Axios from "../../../Utils/Axios";
 
 
 export default function EditPost() {

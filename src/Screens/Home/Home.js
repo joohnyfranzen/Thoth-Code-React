@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Axios from "../../components/Axios";
+import Axios from "../../Utils/Axios";
 import "./Home.css";
 
 export default function Home() {

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { store } from "../../..";
-import Axios from "../../../components/Axios";
+import Axios from "../../../Utils/Axios";
 import './NewPost.css'
 
 export default function NewPost() {

@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import {  useNavigate } from "react-router-dom";
-import { store } from "..";
-import Axios from "../components/Axios"
+import { store } from "../..";
+import Axios from "../../Utils/Axios"
 
 export default function Register() {
 
@@ -16,6 +16,7 @@ export default function Register() {
 
         http.post('/user', {name:name, email:email, password:password}).then((res)=>{
             store.dispatch({type: 'SET_TOKEN', value:res.data.token})
+            localStorage.setItem('token', res.data.token)
             navigate('/')
         })
     }

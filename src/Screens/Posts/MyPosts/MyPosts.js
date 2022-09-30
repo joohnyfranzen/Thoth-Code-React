@@ -1,4 +1,4 @@
-import Axios from "../../../components/Axios";
+import Axios from "../../../Utils/Axios";
 import { React, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { store } from "../../..";
