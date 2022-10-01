@@ -37,14 +37,12 @@ export default function EditPost() {
     }
 
     return(
-        <div className="row justify-content-center pt-5">
-            <div className="col-sm-6">
-                <p>asdoaskdo</p>
-                <p>asdokasopd
-
-                </p>
-                <h1>New Post</h1>
-                <div className="card p-4">
+        <div className="form-1">
+            <div className="form-2">
+                <div className="form-input">
+                    <h1>Edit Post</h1>
+                </div>
+                <div className="form-input">
                     <form action="/action_page.php">
                         <div>
                             <div className="form-group">
@@ -69,8 +67,9 @@ export default function EditPost() {
                                 />
                             </div>
                         </div>
-                    
-                        <button type="button" onClick={submitForm} className="btn btn-primary">Submit</button>
+                        <div className="form-button">
+                            <button type="button" onClick={submitForm}>Submit</button>
+                        </div>                    
                     </form>
                 </div>
             </div> 

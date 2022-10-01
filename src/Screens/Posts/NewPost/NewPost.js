@@ -22,14 +22,14 @@ export default function NewPost() {
     }
 
     return(
-        <div className="row justify-content-center pt-5">
-            <div className="col-sm-6">
-                <div className="title">
+        <div className="form-1">
+            <div className="form-2">
+                <div className="form-input">
                     <h1>New Post</h1>
                 </div>
-                <div className="card p-4">
+                <div className="form-input">
                     <form action="/action_page.php">
-                    <div className="form-group">
+                        <div className="form-group">
                             <label>Title:</label>
                             <input className="form-control" placeholder="Enter a Title" 
                                 ref={title}
@@ -47,7 +47,9 @@ export default function NewPost() {
                                 ref={content}
                             />
                         </div>
-                        <button type="button" onClick={submitForm} className="btn btn-primary">Submit</button>
+                        <div className="form-button">
+                            <button type="button" onClick={submitForm} >Submit</button>
+                        </div>
                     </form>
                 </div>
             </div> 

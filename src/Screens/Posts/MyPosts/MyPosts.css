@@ -1,59 +1,18 @@
-.del-button{
-font-size: 14px;
-border-radius: 5px;
-background-color: rgb(173, 6, 6);
-border-color: transparent;
+.title-1 h1{
+    margin-top: 100px;
 }
+.form-input{
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    border-radius: 10px;
+    padding: 10px;
 
-.posts {
-    background-color: rgb(253, 253, 253);
-    margin: 0 18%;
-    border-left: 1px solid rgb(218, 218, 218);
-    border-right: 1px solid rgb(218, 218, 218);
-    padding: 2%;
+}
+.form-input form{
+    background-color: rgb(242, 255, 240);
+}
+.form-input h2{
     display: flex;
-    flex-wrap: wrap;
-  }
-.post-container {
-    flex:1 1 80%;
-    padding: 3%;
-    margin: 1%;
-    background-color: rgb(255, 255, 255);
-    border-top: 2px solid rgb(165, 165, 165);
-}
-.post-container:hover{
-    background-color: rgba(245, 245, 245);
-}
-.title-posts {
-    margin-top: 5%;
-}
-.posts h2{
-    font-weight: 700;
-    display: flex;
-}
-
-.nav-button{
-    border: 1px solid transparent;
-    border-radius: 5px;
-    padding: 3px 30px;
-    margin: 0 5px;
-    background-color: rgba(0, 127, 211, 0.767);
-    text-decoration: none;
-    font-weight: 500;
-    color: white;
-}
-.pages{
-    display: flex;
+    align-items: center;
     justify-content: center;
 }
-.page-btn {
-    width: 70px;
-    height: 30px;
-    background-color: rgba(0, 127, 211, 0.767);
-    border-radius: 20px;
-    margin: 10px 20px;
-}
-.page-btn p {
-    font-weight: 700;
-    color: black;
-}
+

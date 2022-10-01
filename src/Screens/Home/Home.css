@@ -1,83 +1,100 @@
+a{
+    text-decoration: none;
+}
 .thoth{
     width: 100%;
-    height: 86vh;
-    border-radius: 10px;
-    margin-top: 0px;
+    height: 65vh;
 }
 .main img{
     object-fit: cover;
+    filter: brightness(0.7);
 }
-.posts {
-    background-color: rgb(253, 253, 253);
-    margin: 0 18%;
-    border-left: 1px solid rgb(218, 218, 218);
-    border-right: 1px solid rgb(218, 218, 218);
-    padding: 2%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-.post-container {
-    flex:1 1 80%;
-    padding: 3%;
-    margin: 1%;
-    background-color: rgb(255, 255, 255);
-    border-top: 2px solid rgb(165, 165, 165);
-}
-.post-container:hover{
-    background-color: rgba(245, 245, 245);
-}
-.title {
+.title{
     display: flex;
     justify-content: center;
 
 }
-.title-posts {
-    margin: 40px 0;
-    background-color: rgba(0, 127, 211, 0.767);
-    width: 20%;
-    border-radius: 20px;
-    border-bottom: 2px solid black;
-    text-shadow: 2px 2px black;
-    font-weight: 800;
-    color: white;
-}
-.posts h2{
-    font-weight: 700;
+.title h1{
+    margin: 15px 0;
+    background-color: rgba(0, 0, 0, 0.911);
+    width: 100vw;
+    border-radius: 0.5px;
+    border-bottom: 0.5px solid rgb(255, 255, 255);
+    font-weight: 280;
+    color: rgb(255, 255, 255);
+    justify-content: center;
     display: flex;
 }
-
-.nav-button{
-    padding: 3px 30px;
-    margin: 0 5px;
-    border-radius: 20px;
-    border-bottom: 2px solid black;
-    text-shadow: 1px 1px black;
-    text-decoration: none;
-    font-weight: 500;
-    color: white;
-    background-color: rgba(0, 127, 211, 0.767);
+.posts{
+    background-color: rgb(250, 250, 250);
+    margin: 0 20%;
+    padding: 2%;
+  }
+.post-container{
+    flex:1 1 80%;
+    padding: 3%;
+    margin: 1%;
+    background-color: rgb(255, 255, 255);
+    border-top: 2px solid rgb(10, 54, 30);
 }
-.nav-button:hover {
-    color: rgb(238, 238, 238);
+
+.post-title h2{ 
+    font-weight: 400;
+    font-size: 30px;
+    display: flex;
+    margin-left: 10px;
+    color: rgb(12, 116, 60);
+}
+.post-title h2:hover{
+    color: black;
+    background-color: rgb(235, 255, 235);
+}
+
+.post-content{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.253);    
+    border-top: 1px solid rgba(0, 0, 0, 0.253); 
+    background-color: rgba(0, 0, 0, 0.048);
+}
+.post-content p{
+    margin: 10px 20px;
+}
+
+.post-slug h2{
+    font-size: larger;
+    margin: 20px;    
+}
+
+.buttons {
+    display: flex;
+    justify-content: end;
+}
+.buttons button{
+    background-color: white;
+    border: 1px solid transparent;
+    font-size: 25px;
+}
+.buttons button:hover{
+    color: rgb(102, 102, 102);
 }
 .pages{
     display: flex;
     justify-content: center;
 }
 .page-btn {
-    width: 70px;
+    width: 40px;
     height: 30px;
-    background-color: rgba(0, 127, 211, 0.767);
+    border: 1px solid transparent;
+    background-color: rgba(134, 134, 134, 0.473);
     border-radius: 20px;
-    margin: 10px 20px;
+    margin: 10px 10px;
 }
 .page-btn p {
     font-weight: 700;
     color: black;
 }
-.slug {
-    font-size:larger;
-}
+
 .post-title {
     font-size: 22px;
 }

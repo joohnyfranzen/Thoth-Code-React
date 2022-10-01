@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { BiHash, BiLike, BiRightArrowAlt } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
 import Axios from "../../../Utils/Axios";
 import './Post.css'
@@ -36,43 +37,53 @@ export default function Post() {
     }
 
     return(
-
-        <div>
-            <div className="posts" id="post-id">
-                <div className="post-container">
-                    <h2 className="post-title">{post.title}</h2>
-                    <p>{post.content}</p>
-                    <p>{post.user_id}</p>
-                    <h3 className="slug">{post.slug}</h3>
-                    <Link className="nav-button" to={`/post/${post.id}`}>Like</Link>
-                    <button className="nav-button" onClick={() => {setComment(!comment)}}>Comment</button>
-                </div> 
+        <div className="main">
+            <div className="margin">
+            <div className="title">
+                <h1>Post</h1>
             </div>
-            <div className="post-comment">
-                {comment ? ( 
+            <div className="posts">
+                    <div className="post-container">
+                        <div className="post-title">
+                            <h2>{post.title}</h2>
+                        </div>
+                        <div className="post-content">
+                            <p>{post.content}</p>
+                        </div>
+                        <div className="post-slug">
+                            <h2 className="slug"><BiHash/>{post.slug}<BiHash/></h2>
+                        </div>
+                        <div className="buttons">
+                            <Link className="nav-button" to={`/post/${post.id}`}><button><BiLike/></button></Link>
+                            <button className="nav-button" onClick={() => {setComment(!comment)}}><BiRightArrowAlt/></button>
+                        </div>
+                  </div> 
+                </div>
+                <div className="post-comment">
+                    {comment ? ( 
+                        
+                        <div className="newComment">
+                                <input ref={commentary} type="text">
+                                </input>
+                                <button type="submit" onClick={() => commentPost()}>Comentar</button>
+                            </div>
+                        ) : (<> </>)
+                    }
                     
-                    <div className="newComment">
-                            <input ref={commentary} type="text">
-                            </input>
-                            <button type="submit" onClick={() => commentPost()}>Comentar</button>
-                        </div>
-                    ) : (<> </>)
-                }
-                
-                {comments.map((comment) => {
-                    return (
-                        <div className="comment">
-                            <h2>
-                                {comment.user_comment.name}
-                            </h2>
-                            <p>
-                                Comment= {comment.comment}
-                            </p>
-                        </div>
-                    );
-                })}
+                    {comments.map((comment) => {
+                        return (
+                            <div className="comment">
+                                <h2>
+                                    {comment.user_comment.name}
+                                </h2>
+                                <p>
+                                    Comment= {comment.comment}
+                                </p>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
-        </div>
-        
+        </div>      
     )
 }

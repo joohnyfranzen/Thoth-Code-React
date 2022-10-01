@@ -3,6 +3,8 @@ import { React, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { store } from "../../..";
 import './MyPosts.css'
+import { BiEdit, BiHash, BiMessageSquareX } from "react-icons/bi";
+
 
 
 export default function MyPosts() {
@@ -32,9 +34,10 @@ export default function MyPosts() {
 
     return (
         <div className="main">
-
-            <div className="title">
-                <h1 className="title-posts">My Code Posts</h1>
+            <div className="title-1">
+                <div className="title">
+                    <h1 className="title-posts">My Code Posts</h1>
+                </div>
             </div>
             { posts[0] ?
             (
@@ -47,14 +50,29 @@ export default function MyPosts() {
                             })          
                         }
                         return (
-                            <div className="post-container">
-                                <h2 className="post-title">{post.title}</h2>
-                                <p>{post.content}</p>
-                                <p>{post.user_id}</p>
-                                <h3 className="slug">{post.slug}</h3>
-                                <Link className="nav-button" to={`/myposts/${post.id}`}>Edit</Link>
-                                <button type="button" onClick={del} className="btn-danger del-button">Delete</button>
-                            </div> 
+                            <div className="form-3">
+                                <div className="post-container">
+                                    <div className="post-1">
+                                        <h2 className="post-title">{post.title}</h2>
+                                    </div>
+                                    <div className="post-content">
+                                        <p>{post.content}</p>
+                                    </div>
+                                    <div className="post-slug">                                    
+                                        <h2 className="slug"><BiHash/>{post.slug}<BiHash/></h2>
+                                    </div>
+                                    <div className="buttons">
+                                        <Link  to={`/myposts/${post.id}`}>
+                                            <button type="button">
+                                            <BiEdit/>
+                                            </button>
+                                        </Link>
+                                        <button type="button" onClick={del} >
+                                            <BiMessageSquareX/>
+                                        </button>
+                                    </div>
+                                </div> 
+                            </div>
                         );
                     })}
                     </div>
@@ -65,10 +83,12 @@ export default function MyPosts() {
                 </div>
             ) : 
             (
-                <div>
+                <div className="form-input">
                     <h2>Oh, perharps you want to start posting something ?!?
                     </h2>
-                    <Link className="nav-button" to={'/newpost'}>Click Here</Link> 
+                    <div className="form-button">                
+                        <Link  to={'/newpost'}>Click Here</Link> 
+                    </div>
                 </div>
             )
             }  

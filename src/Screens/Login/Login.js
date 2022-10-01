@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { store } from "../..";
 import Axios from "../../Utils/Axios";
+import './Login.css'
 
 export default function Login() {
     
@@ -22,10 +23,10 @@ export default function Login() {
         
     }
     return(
-        <div className="row justify-content-center pt-5">
-            <div className="col-sm-6">
+        <div className="form-1">
+            <div className="form-2">
                 <h1>Login</h1>
-                <div className="card p-4">
+                <div className="form-input">
                     <form action="/action_page.php">
                         <div className="form-group">
                             <label htmlFor="email">Email address:</label>
@@ -39,9 +40,9 @@ export default function Login() {
                                 ref={password}
                             id="pwd"/>
                         </div>
-                        <div className="form-group form-check">
+                        <div className="form-button">
+                            <button type="button" onClick={submitForm}>Submit</button>
                         </div>
-                        <button type="button" onClick={submitForm} className="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div> 
