@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project developed in september 2022 
 
-## Available Scripts
+Api Developed in Laravel and React, the back end that was used can be found here https://github.com/joohnyfranzen/Thoth-Code-Laravel/ 
 
-In the project directory, you can run:
 
-### `yarn start`
+### Application testing requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Laravel 9
+- Php 8
+- React 18.2
+- Yarn 1.2
+- This Project Clone
+- Laravel Project Clone
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### How to inicializate it
 
-### `yarn test`
+1. In the terminal type ```git clone https://github.com/joohnyfranzen/Thoth-Code-Laravel/```
+2. Type the command "composer install". It will install all necessary php packages.
+3. After installing the dependencies you modify .env.
+4. Finally with the command ```php artisan serve``` run the project.
+5. Then you clone the React App ```git clone https://github.com/joohnyfranzen/Thoth-Code-React/```
+6. Install it dependencies with ```npm install```
+7. Start the project with npm start.
+8. Have fun.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### About the project
 
-### `yarn build`
+1. Seeing the need to understand the architecture of the laravel framework, I tried to make a REST Api consuming the database of this project in the React project that you can acess up here.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. In this project I used Axios to consume in React the database.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. The project itself its a social network, that have authentication with Auth Sanctum, I learned a lot of React by using its framework, there are many useful things inside of it, and its a start for working in a larger project.
